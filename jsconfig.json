@@ -19,6 +19,12 @@
     "paths": {
       "@/lib/*": [
         "lib/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/components/*": [
+        "components/*"
       ]
     }
   },
