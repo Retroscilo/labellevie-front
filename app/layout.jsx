@@ -1,26 +1,18 @@
-import '@/styles/globals.css';
+import "@/styles/globals.css";
 
-import {Montserrat} from "@next/font/google"
-import {Roboto} from "@next/font/google"
+import { Raleway, Montserrat } from "@next/font/google";
 
-const roboto = Roboto({
-    variable: "--roboto-font",
-    weight: "500"
-})
+const raleway = Raleway();
+const montserrat = Montserrat();
 
-const montserrat = Montserrat({
-    variable: "--montserrat-font"
-})
-
-export default function RootLayout({children}) {
-    return (
-        <html>
-        <head>
-            <title>Labellevie</title>
-        </head>
-        <body className={montserrat.className}>
-        {children}
-        </body>
-        </html>
-    )
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <head>
+        <title>Labellevie</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+      </head>
+      <body className={`${montserrat.className} text-body`}>{children}</body>
+    </html>
+  );
 }

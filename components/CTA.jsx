@@ -1,26 +1,21 @@
-"use client"
-
-const colorMap = {
-    primary: {
-        bg: "poudre",
-        text: "white",
-    },
-    secondary: {
-        bg: "white",
-        text: "highlight",
-    }
-}
-
-function parseStyles(type, size) {
-    return (`bg-${colorMap[type].bg} text-${colorMap[type].text} w-CTA-${size}`)
-}
+import clsx from "clsx";
 
 const CTA = (props) => {
-    const {content, type, size} = props
-    const styles = parseStyles(type, size)
-    return (
-        <div className={styles}>{content}</div>
-    )
-}
+  const { content, type, size } = props;
+  return (
+    <div
+      className={clsx("flex items-center justify-center cursor-pointer text-lg", {
+        "bg-highlight": type === "primary",
+        "text-white": type === "primary",
+        "bg-white": type === "secondary",
+        "text-highlight": type === "secondary",
+        "w-CTA-L": size === "L",
+        "h-CTA-L": size === "L",
+      })}
+    >
+      {content}
+    </div>
+  );
+};
 
-export default CTA
+export default CTA;
