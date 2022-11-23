@@ -1,0 +1,19 @@
+.element {
+    transition: color .3s ease;
+}
+
+.element::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    height: 2px;
+    bottom: -10px;
+    transition: transform .3s ease;
+    transform-origin: center;
+}
+
+.element:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}

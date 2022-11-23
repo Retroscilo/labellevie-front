@@ -6,7 +6,7 @@ import clsx from "clsx";
 import styles from "@/styles/card.module.css";
 import CTA from "./CTA";
 import useWindowDimensions from "@/lib/hooks/useWindowDimensions";
-import { useLayoutEffect, useRef, useMemo } from "react";
+import { useLayoutEffect, useRef, useMemo, useEffect } from "react";
 
 const observerOptions = {
   root: null,
@@ -18,7 +18,7 @@ const Card = (props) => {
   const versoImg = getMedia(verso);
   const rectoImg = getMedia(recto);
   const { width } = useWindowDimensions();
-  const observer = useMemo(() => new IntersectionObserver(handleIntersection, observerOptions));
+  const observer = useMemo(() => new IntersectionObserver(handleIntersection, observerOptions), []);
   const small = width < 900;
   const card = useRef(null);
 

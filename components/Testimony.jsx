@@ -34,13 +34,13 @@ function Testimony(props) {
           )}
         </div>
         <div className="row-start-2 sm:row-start-1 sm:col-start-2 relative px-8 font-[500] flex items-center">
-          <span className={`absolute text-[104px] text-highlight ${formal.className} rotate-180 top-[-100px] left-3`}>&quot;</span>
+          <span className={`absolute text-[104px] text-highlight ${formal.className} rotate-180 top-[-100px] left-3`}>"</span>
           {parse(content)}
         </div>
         <div className="sm:col-start-2 sm:text-right uppercase font-[500] px-8 text-xs relative">
           {name}
           <span className={`absolute text-[104px] text-highlight ${formal.className} sm:top-[35px] right-[20px] sm:right-[5px] top-[30px]`}>
-            &quot;
+            "
           </span>
         </div>
       </div>
