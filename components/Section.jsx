@@ -2,11 +2,8 @@
 import parse from "html-react-parser";
 import Image from "next/image";
 import getMedia from "@/lib/strapi/getMedia";
-import { Raleway } from "@next/font/google";
 import CTA from "./CTA";
 import clsx from "clsx";
-
-const raleway = Raleway();
 
 const Section = (props) => {
   const { title, subtitle, content, image, cta: ctas, image_position } = props.data;
@@ -32,7 +29,7 @@ const Section = (props) => {
           "col-start-2": image_position === "left",
         })}
       >
-        <div className={`${raleway.className} text-titles mb-16`}>
+        <div className={`font-title text-titles mb-16`}>
           <div className="text-3xl font-bold mb-4">{parse(title)}</div>
           <div className="italic ml-20 text-xl">{parse(subtitle)}</div>
         </div>

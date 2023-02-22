@@ -1,12 +1,7 @@
 "use client";
 import parse from "html-react-parser";
-import { Raleway } from "@next/font/google";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-
-const raleway = Raleway({
-  weight: "400",
-});
 
 function Bullet(props) {
   const { title, point1, point2, point3 } = props.data;

@@ -1,20 +1,17 @@
-import getUrl from "@/lib/strapi/getUrl";
-
+import Image from "next/Image";
+import logo from "public/logo.png";
 import MenuElement from "./MenuElement";
 
-async function fetchData() {
-  const url = getUrl();
-  const res = await fetch(`${url}/api/pages?populate=deep`);
-  const pages = await res.json();
-  return pages.data;
-}
-
-async function Navbar() {
-  const pages = await fetchData();
-  pages.forEach((page) => console.log(page.attributes));
+async function Navbar({ pages }) {
+  const left = pages.slice(0, Math.floor(pages.length / 2));
+  const right = pages.slice(Math.ceil(pages.length / 2), pages.length);
   return (
-    <div className="flex justify-evenly items-center mx-auto bg-white h-[75px] text-xl text-titles">
-      {pages.map((pages, i) => (
+    <div className="flex justify-evenly items-center mx-auto bg-white h-[75px] text-base text-titles">
+      {left.map((pages, i) => (
+        <MenuElement key={i} data={pages} />
+      ))}
+      <Image src={logo} alt="logo la belle vie" width={130} className="mx-10" />
+      {right.map((pages, i) => (
         <MenuElement key={i} data={pages} />
       ))}
     </div>

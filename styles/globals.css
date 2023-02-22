@@ -13,3 +13,9 @@ strong {
 h1 strong {
     font-weight: 700;
 }
+
+/* Hide the popper when the reference is hidden */
+#popper[data-popper-reference-hidden] {
+    display: none;
+    pointer-events: none;
+  }
